@@ -9,11 +9,15 @@ import coverage
 import csv
 import numpy 
 import os
+import math
 
 TESTDATA_FILENAME = os.path.join(os.path.dirname(__file__), 'dataset2.csv')
 
 
 class MyTest(unittest.TestCase):
 
-   def setUp(self):
+   def test_1(self):
        self.testdata = open(TESTDATA_FILENAME).read()
+       
+if __name__ == '__main__':
+    unittest.main()
