@@ -1,0 +1,5 @@
+lapiz
+borrador
+tijera
+pluma
+sacapuntas
