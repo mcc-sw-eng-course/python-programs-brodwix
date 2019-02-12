@@ -17,7 +17,7 @@ TESTDATA_FILENAME = os.path.join(os.path.dirname(__file__), 'dataset2.csv')
 class MyTest(unittest.TestCase):
 
    def test_1(self):
-       self.testdata = open(TESTDATA_FILENAME).read()
+       self.testdatooa = open(TESTDATA_FILENAME).read()
        
 if __name__ == '__main__':
     unittest.main()
