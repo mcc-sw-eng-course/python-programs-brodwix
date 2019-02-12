@@ -17,7 +17,10 @@ TESTDATA_FILENAME = os.path.join(os.path.dirname(__file__), 'dataset2.csv')
 class MyTest(unittest.TestCase):
 
    def test_1(self):
-       self.testdatooa = open(TESTDATA_FILENAME).read()
+       self.testdata = open(TESTDATA_FILENAME).read()
+  
+   def test_assert_true(self):
+       self.assertTrue(type(TESTDATA_FILENAME) is str)
        
 if __name__ == '__main__':
     unittest.main()
