@@ -10,10 +10,14 @@ x = list(reader)
 data = numpy.array(x).astype('float')
 A = numpy.reshape(data, -1)
 
+
 #suma de todos los elementos de la matriz
+
 my_list = data.sum()
 dim = data.shape
 n = len(A)
+
+
 
 #Sample mean
 smean = my_list/n

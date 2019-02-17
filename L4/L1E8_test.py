@@ -9,7 +9,7 @@ import coverage
 import csv
 import numpy 
 import os
-import math
+import L1E8
 
 TESTDATA_FILENAME = os.path.join(os.path.dirname(__file__), 'dataset2.csv')
 
@@ -20,6 +20,8 @@ class MyTest(unittest.TestCase):
        self.testdata = open(TESTDATA_FILENAME).read()
   
    def test_assert_true(self):
+       self.assertTrue(type(TESTDATA_FILENAME) is str)
+   def test_file_list(self):
        self.assertTrue(type(TESTDATA_FILENAME) is str)
        
 if __name__ == '__main__':
