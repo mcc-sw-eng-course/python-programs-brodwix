@@ -2,7 +2,7 @@
 """
 Created on Thu Feb 14 15:42:40 2019
 
-@author: Bruno
+@author: Bruno Vergaray
 """
 
 import csv
