@@ -1,0 +1,67 @@
+
+***************************************
+Case Study 2: X-Ray Diagnostic Machine*
+***************************************
+Model proposed: Waterfall model
+
+- It can work well for this project, assuming that it is complex, but very well understood
+- This is particullary well suited to teams that may see members come and go. The project
+  has development in 2 cities of Europe and testing in India, so there may be large 
+  teams with shifting members. This model allows the burden of design to be placed
+  on the core documentation and less on any individual team member.
+- This model allows early design changes.  
+
+Concept: Develop additional sofware for an X-Ray Diagnostic Machine
+Software Requirements: ?
+Preliminary Design:?
+Detailed Design:?
+
+
+System Reqs.
+	Software Reqs
+		Preliminary Design
+			Detailed Design
+				Code and debug
+					Testing
+						Operations and Maintenance
+
+*****************************
+Case Study 3: Research Group*
+*****************************
+
+model proposed: Design-to-schedule
+
+- New technologies and features are released every 2 years, so the Theam absolutely
+  need to have results before the deadline.
+- Careful prioritization of features and risks to address.
+
+Concept: Explore new technologies for the next generation of products that are developed
+		 by the company.
+	Reqs Analysis:?
+		Arch. Design:? 
+			High Priority: Evaluate multiple technologies
+				↓
+			Medium High Priority: Evaluate potential business opportunity
+				↓
+			Medium Priority: Verification ---------------------------------> Release
+
+*******************************
+Case Study 4: Graphical Driver*
+*******************************
+
+model proposed: Evolutionary Delivery
+
+Concept: Develop a Driver that is used for enabling testing of complex platcorms.
+	Requirements: Simulation Software
+		Arch. Design: ?
+			Develop a version---------------------------------> Deliver Final Version
+				↑			↓
+				|			Deliver the version ---------> - Concept platforms testing
+				|										   - Develop new apps for those platforms
+				|							↓
+				|					Elicit apps and testing Feedback from Teams
+				|							↓
+				|					Incorporate Teams Feedback
+				|						    ↓
+				←---------------------------
+											
