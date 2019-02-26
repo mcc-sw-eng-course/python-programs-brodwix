@@ -1,0 +1,105 @@
+***********
+problema 1*
+***********
+
+
+
+***********
+problema 2*
+***********
+
+----Seguridad-----
+
+Es un error asumir que el programa no tendría problemas de seguridad y a su vez, omitir 
+este requisito. los errores de seguridad pueden surgir de medios tanto internos como externos.
+En ese caso, los profesores deberán ingresar una contraseña para acceder al esquema
+
+
+----Disponibilidad----
+
+La aplicación será disponible en formato de CD
+La aplicación será accesible por el público en general
+
+----Mantenimiento-----
+
+El equipo de desarrollo será capaz de agregar una nueva característica al programa, incluyendo código
+fuente, modificaciones documentadas y testing en un tiempo de una semana de trabajo.
+
+---Confiabilidad----
+
+La aplicación será completamente funcional en cualquier plataforma que tenga
+un buscador web que tenga Java Sript habilitado, funciones de audio y plug-in de Flash. 
+
+
+***********
+problema 3*
+***********
+
+The project shall be scalable to accomodate unrestricted growth in the number of payboxes to be plugged into the Turnstile system
+
+
+
+
+***********
+problema 4*
+***********
+
+Issues:
+
+
+User Class 1 - The User
+
+ID: FR1
+TITLE: Acceder a la página de internet de la aplicación
+DESC: El usuario será capaz de acceder a la página de la aplicación a través de cualquier navegador de internet
+RATIONAL: In order for a user to acces the webpage
+DEP: NONE
+
+ID: FR2
+TITLE: Web application - Search
+DESC: Given that a user accesed the webpage, then the first page that is shown should
+	  be the search page. The user should be able to search for a crossing, according to 
+	  several search options.
+	  The search options are first letter of the crossing street name and a part of the crossing street name.
+RATIONAL: In order for a user to search for a street name
+DEP: FR1 
+
+
+
+ID: FR3
+TITLE: Web application - Search result in a map view
+DESC:
+	- Search results can be viewed on a map according to the user's inputs.
+	-A specific pin will represent the specific crossing location.
+	- The map view should include a button that, when selected should display satellite view.
+RATIONAL: The way results are displayed in a map
+DEP: FR2
+
+
+
+
+
+***********
+problema 5*
+***********
+Issues: 
+		
+
+		
+
+Mensajes de confirmación
+
+ID: FR1 (ommited)
+TITLE: Alta, baja y edición
+DESC: El usuario será capaz de modificar la base de datos del sistema para dar las siguientes operaciones:
+		-Dar de alta un elemento de la base de datos
+		-Dar de baja un elemento de la base de datos
+		-Editar un elemento de la base de datos
+RATIONAL: Cualquier nuevo hallazgo debe ser documentado en la base de datos.
+DEP:NONE
+
+ID: FR2
+TITLE: Mensajes de confirmación
+DESC: El sistema será capaz de mandar un mensaje de confirmación antes de concretar operaciones que la soliciten.
+RATIONAL: Operaciones que cambien el estado de la base de datos.
+DEP: FR1
