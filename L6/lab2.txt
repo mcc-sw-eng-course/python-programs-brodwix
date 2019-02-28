@@ -89,7 +89,7 @@ Issues:
 
 Mensajes de confirmación
 
-ID: FR1 (ommited)
+ID: FR1 
 TITLE: Alta, baja y edición
 DESC: El usuario será capaz de modificar la base de datos del sistema para dar las siguientes operaciones:
 		-Dar de alta un elemento de la base de datos
