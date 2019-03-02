@@ -1,5 +1,4 @@
 from pathlib import Path
-import os
 import csv
 
 
@@ -13,30 +12,25 @@ class Sorter:
         if not file.is_file():
             raise ValueError("file not found")
         try:
-            data = []
-            with open(file_location, 'r') as f:
-                reader = csv.reader(f, delimiter=',')
-                for row in f:
-                    result = data.append(int(row[4].replace(',', '')))
+            with open(file_location, newline='') as f:
+                reader = csv.reader(f, delimiter=',',lineterminator='\n', quoting=csv.QUOTE_NONNUMERIC)
+                self.readfile = list(reader)
+                for row in reader:
+                    print(', '.join(row))
 
-                self.readfile = result
 
         except:
             raise ValueError("could not open file")
         return self.readfile
 
-    def set_output_data(self, file_location ):
-        file = Path(file_location )
-        if file.is_file():
-            raise ValueError("file already exists")
-        try:
-            with open(file_location, 'x') as f:
-                writer = csv.writer(f)
-                self.writefile = list(writer)
 
-        except:
-            raise ValueError("could not create file")
-        return self.writefile
+
+    def set_output_data(self, file_location):
+                      
+            with open(file_location, 'x') as f:
+                writer = csv.writer(f, quoting = csv.QUOTE_ALL)
+                self.writefile = writer.writerow(self.readfile)
+
 
     def mergeSort(self,list):
         if len(list) > 1:
@@ -71,3 +65,9 @@ class Sorter:
                 k += 1
 
 
+# Para iniciar el programa, se debe ejecutar
+#
+# r1 = Sorter()                             ---la clase Sorter se guardará en la variable r1
+# a = r1.set_input_data("inputlist.csv")    --- se extraerán los datos de la lista csv y se guardaran en la variable a
+# r1.mergeSort(a[0])                        --- se ordenarán los números de menor a mayor usando mergeSort
+# r1.set_output_data("out.csv")             --- se guardarán los resultados en un nuevo archivo que se llamará "out.csv"
