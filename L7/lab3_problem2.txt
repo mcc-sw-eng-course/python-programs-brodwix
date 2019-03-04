@@ -1,0 +1,76 @@
+@startuml
+
+title Digital Customer Correspondence System
+
+Class Letter{
+    -body:str
+    -CustomerData:str
+    -Date:int
+}
+
+
+Class Correspondent{
++writeLetter()
+}
+
+Class Date{
+-dateNumber: int
+-monthNumber: int
+-yearNumber: int
+-weekdayName: str
+-setweekdayName()
+-setDate()
+}
+
+Class Person {
+-name
++setName()
+}
+
+Class additionalInfo{
+-addInfo
+}
+
+Class Customer{
+-statusNumber
+-Address
++setAddress()
+}
+
+Class Address{
+-cityName
+-streetName
+-number
+}
+
+Class germanAddress{
+-Postleitzahl
+}
+
+Class internationalAddress{
+-countryName
+}
+
+
+
+class zipCode {
+  -zipCode
+}
+
+
+
+Correspondent "writes"-- "1..*"Letter
+
+
+internationalAddress "1" <|-down- Customer: Inheritance
+germanAddress "1   "  <|-down- Customer: Inheritance
+internationalAddress "1   " o--down- zipCode: Aggregation
+Date <|-down- Person: Inheritance
+Address "1..*  " o--up- additionalInfo: Aggregation
+Address "1   " <|-down- germanAddress: Inheritance
+Address "1   " <|-down- internationalAddress: Inheritance
+Person <|-down- Customer: Inheritance
+Person <|-down- Correspondent: Inheritance
+
+
+@enduml

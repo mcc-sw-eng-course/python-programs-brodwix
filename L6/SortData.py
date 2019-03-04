@@ -26,7 +26,7 @@ class Sorter:
 
 
     def set_output_data(self, file_location):
-                      
+
             with open(file_location, 'x') as f:
                 writer = csv.writer(f, quoting = csv.QUOTE_ALL)
                 self.writefile = writer.writerow(self.readfile)

@@ -1,0 +1,38 @@
+@startuml
+
+actor Employee
+participant Letter
+participant Database
+participant currentDate
+participant printer
+
+Employee -> Letter : create 
+
+Database -> System: Validate data
+currentDate -> Letter: send Date
+
+
+alt customer exists
+
+	System -> Letter: Send data
+	
+else Dialog Prompt
+    Database->System: Request Data
+    activate System
+	System -> System : Complete Data
+	Database -> Letter : Send Data
+return New Data
+   
+end
+
+Employee -> System : save Letter
+System -> Employee : printRequest()
+
+alt Employee wants to print
+    
+    printer -> Employee : Print Letter
+    
+    
+end
+
+@enduml
