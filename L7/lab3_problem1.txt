@@ -1,0 +1,109 @@
+@startuml
+
+title Problem 1: University Database for student transcripts 
+
+abstract class Person {
+  -name: string
+  -birthdate: date
+  -sex: Sex
+}
+
+abstract class Address {
+  -postalCode: zi{pk}
+  -currentAddress: string
+  -currentPhone: string
+  -phone: string
+}
+
+
+enum LetterGrades{
+    HD
+    D
+    C
+    P
+}
+
+enum YearsOfStudy {
+    first
+    second
+    third
+    honors
+    postGraduate
+}
+
+enum Sex {
+    m
+    f
+}
+
+class Student {
+  -studentNumber: int{pk}
+  -taxFileNumber: int{pk}
+  -currentAddress: string
+  -currentPhone: string
+  -phone: string
+  -yearOfStudy: YearsOfStudy 
+  +createTranscript()
+  +editTranscript()
+  +removeTranscript()
+}
+
+class Instructor {
+  -instructorNumber: int{pk}
+  -instructorID: int{pk}
+  +gradeTranscript()
+}
+
+class Department {
+  -name: string{pk}
+  -departmentCode: int{pk}
+  -officeNumber: int
+  -officePhone: string
+  -faculty: faculty
+  -degreeProgram: string
+  +showDegreeProgram(degreeProgram)
+  +makeCourseOffer()
+}
+  
+class Course {
+  -name: string
+  -description: string
+  -courseNumber: int{pk}
+  -semesterHours: time
+  -level: int
+  -offeringDepartment{fk}
+  +enrollStudent()
+  +unenrollCourse
+
+}  
+
+class Section {
+  -instructor: string
+  -semester: int
+  -year: date
+  -course: int{fk}
+  -sectionNumber: int{pk}
+}
+
+class gradeReport {
+  -student: int{fk}
+  -section:{fk}
+  -letterGrade: LetterGrades
+  -percentageMark: int
+  +generateReport(letterGrade, percentageMark)
+  +showReport()
+  +editReport()
+}
+
+Address <|-- Person
+Address <|-- Student
+Address <|-- Instructor
+Person <|-- Student
+Person <|-- Instructor
+Course o-- Student
+Student *--gradeReport
+Section "1...*" o-- Course
+Section o--gradeReport
+Department *-- Course
+
+@enduml

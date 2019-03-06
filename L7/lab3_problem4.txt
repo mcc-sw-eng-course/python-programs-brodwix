@@ -1,0 +1,56 @@
+
+@startuml
+Actor User
+
+box "doorConsole" #LightBlue
+	participant keypad
+	participant display
+	participant toneGenerator
+end box
+
+box "Door" #lightgreen
+	participant Lock
+	participant Solenoid
+	participant microSw1
+	participant microSw2
+	participant Motor
+end box
+
+
+
+alt is door fully closed?
+    microSw1 -> Solenoid : send signal
+    Solenoid -> Lock: close Lock
+
+    
+
+end
+    User -> keypad: write Password
+
+keypad -> microSw1 : process Password
+
+alt Password is correct or wallButton pressed
+    microSw1 -> microSw1: open Switch
+    Solenoid-> Lock: open Lock
+    microSw1 -> Motor: activate Motor
+    
+    alt is door blocked and 5 secs passed?
+        toneGenerator -> toneGenerator: sendAlarm()
+    end
+    
+    microSw2 -> microSw2: close Switch
+    
+    alt 30 seconds passed
+        microSw2->microSw2: openSw
+        Solenoid -> Lock: close Lock 
+        microSw2 -> Motor: activate Motor
+        
+        alt is door blocked and 5 secs passed?
+        toneGenerator -> toneGenerator: sendAlarm()
+        end
+        
+        microSw1 -> microSw1 : closeSw
+    end
+end
+
+@enduml
