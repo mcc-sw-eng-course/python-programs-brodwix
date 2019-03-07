@@ -1,0 +1,8 @@
+Merge Sort Results
+
+Out[56]: 
+{'num_of_records': 1048576,
+ 'time_consumed': datetime.timedelta(0, 1, 331296),
+ 'start_time': datetime.datetime(2019, 3, 6, 17, 43, 55, 402119),
+ 'end_time': datetime.datetime(2019, 3, 6, 17, 43, 56, 733415),
+ 'algorithm': 'Merge Sort'}
