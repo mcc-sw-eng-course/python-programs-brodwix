@@ -6,3 +6,22 @@ Out[56]:
  'start_time': datetime.datetime(2019, 3, 6, 17, 43, 55, 402119),
  'end_time': datetime.datetime(2019, 3, 6, 17, 43, 56, 733415),
  'algorithm': 'Merge Sort'}
+ 
+
+Heap Sort Results
+
+Out[11]: 
+{'num_of_records': 1048576,
+ 'time_consumed': datetime.timedelta(0, 17, 898533),
+ 'start_time': datetime.datetime(2019, 3, 7, 11, 33, 48, 352572),
+ 'end_time': datetime.datetime(2019, 3, 7, 11, 34, 6, 251105),
+ 'algorithm': 'Heap Sort'}
+ 
+ Quick Sort Results
+ 
+Out[37]: 
+{'num_of_records': 1048576,
+ 'time_consumed': datetime.timedelta(0),
+ 'start_time': datetime.datetime(2019, 3, 7, 11, 49, 22, 690252),
+ 'end_time': datetime.datetime(2019, 3, 7, 11, 49, 22, 690252),
+ 'algorithm': 'Quick Sort'}

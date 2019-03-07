@@ -12,7 +12,7 @@ ALGORITHM = "algorithm"
 # Algorithm Identifiers
 MERGE_SORT = "Merge Sort"
 HEAP_SORT = "Heap Sort"
-QUICK_SORT = "Heap Sort"
+QUICK_SORT = "Quick Sort"
 
 class Sorter:
     def __init__(self):
@@ -22,6 +22,7 @@ class Sorter:
         self.end_time = datetime.now()
         self.algorithm_used = ""
 
+    # Function to read validate csv file
     def set_input_data(self, file_location):
         file = Path(file_location)
         if not file.is_file():
@@ -39,7 +40,7 @@ class Sorter:
         return self.readfile
 
 
-
+    #Function to generate output file
     def set_output_data(self, file_location):
 
             with open(file_location, 'x') as f:
@@ -109,6 +110,7 @@ class Sorter:
 
     def heapSort(self, list):
         self.algorithm_used = HEAP_SORT
+        self.start_time = datetime.now()
         n = len(list)
 
         # Build a maxheap.
@@ -119,6 +121,7 @@ class Sorter:
         for i in range(n - 1, 0, -1):
             list[i], list[0] = list[0], list[i]  # swap
             self.heapify(list, i, 0)
+        self.end_time = datetime.now()
 
     #For Quick Sort
     def partition(self, list, low, high):
@@ -137,8 +140,10 @@ class Sorter:
         list[i + 1], list[high] = list[high], list[i + 1]
         return (i + 1)
 
+
     def quickSort(self, list, low, high):
         self.algorithm_used = QUICK_SORT
+        self.start_time = datetime.now()
         if low < high:
             # pi is partitioning index, list[p] is now
             # at right place
@@ -148,6 +153,8 @@ class Sorter:
             # partition and after partition
             self.quickSort(list, low, pi - 1)
             self.quickSort(list, pi + 1, high)
+        self.end_time = datetime.now()
+
 
     def get_performance_data(self)-> dict:
         return {
