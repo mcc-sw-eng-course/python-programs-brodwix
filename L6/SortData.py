@@ -84,6 +84,7 @@ class Sorter:
                 k += 1
 
         self.end_time = datetime.now()
+        return list
 
     #For Heap Sort
     def heapify(self,list, n, i):
@@ -122,6 +123,8 @@ class Sorter:
             list[i], list[0] = list[0], list[i]  # swap
             self.heapify(list, i, 0)
         self.end_time = datetime.now()
+        return list
+
 
     #For Quick Sort
     def partition(self, list, low, high):
@@ -141,6 +144,7 @@ class Sorter:
         return (i + 1)
 
 
+
     def quickSort(self, list, low, high):
         self.algorithm_used = QUICK_SORT
         self.start_time = datetime.now()
@@ -154,6 +158,7 @@ class Sorter:
             self.quickSort(list, low, pi - 1)
             self.quickSort(list, pi + 1, high)
         self.end_time = datetime.now()
+        return list
 
 
     def get_performance_data(self)-> dict:
