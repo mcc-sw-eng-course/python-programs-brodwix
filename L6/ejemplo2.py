@@ -1,7 +1,6 @@
 from pathlib import Path
 import datetime
 
-
 class FileSort(object):
     def __init__(self):
         self.readPath = ""
