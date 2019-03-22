@@ -50,3 +50,7 @@ L8/.idea/modules.xml
 L8/.idea/vcs.xml
 L8/.idea/workspace.xml
 L8/__pycache__/ticTacToe2.cpython-36.pyc
+L8/aporte/random_tictactoe.py
+L8/aporte/test_tictactoe_ai.py
+L8/aporte/test_tictactoe_board.py
+*.py
